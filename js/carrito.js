@@ -34,7 +34,7 @@ function productosCarro(producto) {
 
 
 function cargarProductos() {
-    if (carrito.length > 0) {
+    if (carrito && carrito.length > 0) {
         productosCarrito.innerHTML = "";
         carrito.forEach((producto) => {
             productosCarrito.innerHTML += productosCarro(producto);
@@ -44,9 +44,7 @@ function cargarProductos() {
         montoCarrito()
         eliminarProductoCarrito()
     } else{
-        resumen.style.display = "none"
-        contenedorCarrito.style.display = "none"
-        carritoVacio.style.display = "flex"
+        estiloCarroVacio()
     }
 
 }
@@ -89,9 +87,7 @@ function limpiarCarrito(){
     botonFinalizarCompra.addEventListener("click",()=>{
         localStorage.removeItem("carrito")
         if(carrito){
-            resumen.style.display = "none"
-            contenedorCarrito.style.display = "none"
-            carritoVacio.style.display = "flex"
+            estiloCarroVacio()
         }
    
     })
@@ -120,6 +116,13 @@ function alertaSweet(){
           });
     })
 }
+
+function estiloCarroVacio(){
+    resumen.style.display = "none"
+    contenedorCarrito.style.display = "none"
+    carritoVacio.style.display = "flex"
+}
+
 cargarProductos();
 alertaSweet()
 limpiarCarrito()
