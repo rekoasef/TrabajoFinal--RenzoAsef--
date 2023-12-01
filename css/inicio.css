@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css");
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.logo img {
+    width: 450px; 
+}
+.contenedorFondo {
+    width: 100%;
+    position: relative;
+}
+
+#fondo {
+    width: 100%;
+    height: auto; 
+    object-fit: cover; 
+}
+
+.contenedorHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px;
+}
+
+#logoPagina {
+    width: 220px;
+    margin: 0 auto;
+    height: 180px;
+}
+
+#carroDeCompras {
+    width: 50px; /* Ajusta el ancho del carroDeCompras según sea necesario */
+}
+
+.tituloProductos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: bold;
+    text-decoration: underline;
+}
+
+.contenedorBuscador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+#iconoFiltro {
+    height: 35px;
+    margin: 0;
+}
+
+#buscadorProductos {
+    margin-right: 10px; 
+    border: solid 1px black;
+    text-align: center;
+    width: 80%;
+}
+
+#labelFiltrar {
+    display: flex;
+    align-items: center;
+}
+
+.contenedorFiltro {
+    display: flex;
+    justify-content: top;
+    align-items: center;
+    margin: 30px;
+    width: 100px;
+}
+
+.card {
+    display: flex;
+    width: 95%;
+    height: 269px;
+    border: solid 2px black;
+    margin-bottom: 50px;
+    margin-left: 30px;
+    border-radius: 20px;
+    border-color: rgb(109, 109, 109);
+    box-shadow: 3px 4px 20px rgb(109, 109, 109); /* Añadido el desplazamiento vertical y corregido el color */
+}
+
+#precio,
+#inputCategoria {
+    display: inline-block; /* Esto hace que los labels se comporten como bloques en línea y se ajusten al ancho especificado */
+    margin-bottom: 5px; /* Ajusta según sea necesario */
+    height: 40px;
+    width: auto;
+}
+
+
+.imagenProducto {
+    flex: 0 0 30%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+#productoImagen {
+    max-height: 100%;
+    max-width: 100%; 
+    border-radius: 10px 0 0 10px;
+}
+
+.descripcionProducto {
+    flex: 1;
+    margin: 10px;
+}
+
+.tituloProducto {
+    margin-bottom: 5px;
+    font-family: bold;
+    font-size: 25px;
+  }
+
+
+#añadirCarrito {
+    width: 180px;
+    order: 2; /* Coloca el botón en tercer lugar */
+}
+
+.footercard {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.precio {
+    text-align: right;
+    font-size: 25px;
+    font-family: bold;
+    width: auto;
+}
+
+.descripcionProducto ul {
+    margin-top: 10px; /* Espacio superior entre el primer elemento de la lista y el título */
+    margin-bottom: 10px; /* Espacio inferior entre el último elemento de la lista y el pie de la tarjeta */
+    padding-left: 0; /* Elimina el relleno predeterminado de la lista para asegurar que no haya espacio adicional en el lado izquierdo */
+}
+
+.descripcionProducto li {
+    margin-bottom: 3px; /* Espacio entre cada elemento de la lista */
+}
+
+.contenedorFooter{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-family: bold;
+}
+
+#carroDeCompras:hover{
+    cursor: pointer;
+}
+
+.alerta {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    z-index: 1000;
+    
+}
+.contenedorFiltro {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #f9f9f9d3;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: start;
+    justify-content: space-between;
+    width: 90%;
+    display: none;
+}
+
+#inputCategoria{
+    width: 670px;
+}
+
+.categorias label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+.botonFiltro {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.sacarFiltro {
+    background-color: #f7593d;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#precio{
+    width: 60%;
+    margin-left: 0;
+}
+
+@media screen and (max-width: 1030px){
+    .card{
+        height: auto;
+    }
+    .contenedorFiltro {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .categorias label {
+        margin-bottom: 5px;
+    }
+    #productoImagen {
+        height: 100%;
+        max-height: 250px;
+        width: auto; 
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    #precio,
+    #inputCategoria {
+        display: inline-block; /* Esto hace que los labels se comporten como bloques en línea y se ajusten al ancho especificado */
+        margin-bottom: 5px; /* Ajusta según sea necesario */
+        height: 40px;
+        width: auto;
+    }
+}
+@media screen and (max-width: 430px) {
+
+    .card {
+        height: auto; /* el Auto permite que la altura se ajuste al contenido */
+        flex-direction: column;
+        width: auto;
+    }
+
+    .imagenProducto {
+        flex: 0 0 100%; 
+        margin-right: 0;
+    }
+    #precio,
+    #inputCategoria {
+        display: inline-block; /* Esto hace que los labels se comporten como bloques en línea y se ajusten al ancho especificado */
+        margin-bottom: 5px; /* Ajusta según sea necesario */
+        height: 40px;
+        width: auto;
+    }
+    #productoImagen {
+        height: 100%;
+        max-height: 250px;
+        width: auto; 
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .descripcionProducto {
+        flex: 1;
+        margin: 10px;
+        text-align: center; 
+    }
+
+    .tituloProducto {
+        text-align: center; 
+        margin-bottom: 10px;
+    }
+
+    #añadirCarrito {
+        width: 100%; 
+        margin-top: 10px;
+    }
+
+    .footercard {
+        flex: 1;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+    }
+
+    .precio {
+        width: 100%;
+        text-align: center;
+    }
+    .contenedorFiltro {
+        flex-direction: column; 
+        align-items: stretch;
+    }
+
+    .categorias label {
+        margin-bottom: 5px;
+    }
+
+    .botonFiltro {
+        width: 100%; /* Ocupar todo el ancho disponible */
+        margin-top: 10px;
+    }
+
+    #precio {
+        width: 100%;
+    }
+
+    #fondo {
+        width: 100%;
+        height: auto;
+    }
+
+    #fondo{
+        display: none;
+    }
+
+    .contenedorHeader{
+        margin-bottom: 20px;
+    }
+}
+

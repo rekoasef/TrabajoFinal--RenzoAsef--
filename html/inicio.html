@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/logogoogle.jpg">
+    <title>TECNO</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-nw+8HHBhFvMakKtWepFp8ItMqWzIzXL6L2zu7x+7opb2adk3tuR1aIRhjQYdoA4y9gKpqgYhDQqgxd5kHIhjRQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header> 
+        <div class="contenedorHeader">
+            <img src="../img/Logo.png" alt="Logo pagina" id="logoPagina">
+            <img src="../img/carrito.png" alt="Carrito de compras" id="carroDeCompras">
+        </div>
+    </header>
+    <main>
+        <div class="contenedorFondo">
+            <img src="../img/fondo.png" alt="Fondo" id="fondo">
+        </div>
+        <div class="contenedorTituloProducto">
+            <h3 class="tituloProductos">PRODUCTOS</h3>
+        </div>
+        <div class="contenedorBuscador">
+            <input type="search" id="buscadorProductos" placeholder="Ingrese el producto que desea buscar">
+            <div class="contenedorBoton">
+                <button class="activarFiltro">Desplegar Filtro</button>
+            </div>
+        </div>
+        <div class="contenedorFiltro">
+            <label for="precio">PRECIO HASTA:</label>
+            <input type="number" id="precio" placeholder="Ingrese el precio máximo">
+            <label for="inputCategoria">CATEGORIA:</label>
+            <label for="nombre de categorias">1-Televisor 2-Celular 3-Notebook</label>
+            <input type="text" id="inputCategoria" placeholder="Ingrese el nombre de la categoria que desee filtrar">            
+            <div class="botonesFiltro">
+                <button class="botonFiltro">Filtrar</button>
+                <button class= "sacarFiltro">Sacar Filtro</button>
+            </div>
+
+        </div>        
+        <div class="contenedorCard">
+
+        </div>
+    </main>
+    <footer>
+        <div class="contenedorFooter">
+            <h1>¡Gracias por visitar Tecno!</h1>
+        </div>
+    </footer>
+
+    <script src="../js/inicio.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+</body>
+</html>
