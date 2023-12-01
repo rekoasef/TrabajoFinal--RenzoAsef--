@@ -43,8 +43,8 @@ function cargarProductos() {
         cantProductos()
         montoCarrito()
         eliminarProductoCarrito()
-    } else{
-        estiloCarroVacio()
+    } else{ 
+        estiloCarroVacio()  
     }
 
 }
