@@ -1,4 +1,4 @@
-
+const inputsFiltros = document.querySelectorAll(".formularioFiltro")
 const tarjetasProductos = document.querySelector(".contenedorCard");
 const buscadorProductos = document.querySelector("#buscadorProductos")
 const botonFiltro = document.querySelector("button.activarFiltro")
@@ -88,9 +88,7 @@ function cargarCarrito() {
         boton.addEventListener("click", (el) => {
             const id = parseInt(el.target.id);
             const productoSeleccionado = productos.find((producto) => producto.id === id);
-            console.log(carrito)
             carrito.push(productoSeleccionado);
-            console.table(carrito);
             mostrarAlerta()
             guardarCarritoEnLocalStorage();
         });
@@ -118,14 +116,22 @@ function mostrarAlerta() {
 buscadorProductos.addEventListener("search", ()=>{
     let textoBuscar = buscadorProductos.value.trim().toUpperCase()
     let resultado = productos.filter((producto)=>producto.titulo.toUpperCase().includes(textoBuscar))
-    console.table(resultado)
 
-    tarjetasProductos.innerHTML = ""
+    if(resultado.length === 0){
+        Swal.fire({
+            icon: "error",
+            title: "Sin Resultados",
+            text: "No se encontraron productos que coincidan con lo ingresado.",
+        });
+    }else{
+        tarjetasProductos.innerHTML = ""
 
-    resultado.forEach((producto)=>{
-        tarjetasProductos.innerHTML += cards(producto)
-        cargarCarrito()
-    })
+        resultado.forEach((producto)=>{
+            tarjetasProductos.innerHTML += cards(producto)
+            cargarCarrito()
+        })
+    }
+
     
 })
 
@@ -175,22 +181,26 @@ function filtrarProductos() {
     } else {
         // No aplicar filtros
         resultadoFiltro = productos;
-    }
-    if(resultadoFiltro !== 0){
-        tarjetasProductos.innerHTML = "";
-
-        resultadoFiltro.forEach((producto) => {
-            tarjetasProductos.innerHTML += cards(producto);
-        });
-        cargarCarrito();
-    }else{
         Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Producto no encontrado!",
+            text: "No ingresaste datos para filtrar!",
           });
     }
-
+    if (resultadoFiltro.length === 0) {
+        Swal.fire({
+            icon: "error",
+            title: "Sin Resultados",
+            text: "No se encontraron productos que coincidan con los filtros seleccionados.",
+        });
+    } else {
+        // Actualizar la interfaz con los resultados
+        tarjetasProductos.innerHTML = "";
+        resultadoFiltro.forEach((producto) => {
+            tarjetasProductos.innerHTML += cards(producto);
+            cargarCarrito();
+        });
+    }
 }
 
 function sacarFiltro() {
@@ -204,6 +214,7 @@ function sacarFiltro() {
         });
     });
 }
+
 
 
 // Asociar la función de filtrado al evento click del botón de filtro
